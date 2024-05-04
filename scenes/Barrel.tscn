@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://assets/sprites/blue_barrel.png" type="Texture" id=1]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 1 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 33.0606
+
+[node name="Barrel" type="StaticBody2D"]
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+scale = Vector2( 2, 2 )
+z_index = 1
+frames = SubResource( 1 )
+playing = true
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+position = Vector2( -43, 6 )
+shape = SubResource( 2 )
+
+[node name="Collision2" type="CollisionShape2D" parent="."]
+position = Vector2( 5, -42 )
+shape = SubResource( 2 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PoolVector2Array( 77, 18, 77, 22, 71, 28, 69, 28, 55, 42, 55, 46, 49, 52, 45, 52, 31, 66, 31, 68, 25, 74, 21, 74, -19, 34, -19, 30, -13, 24, -11, 24, 3, 10, 3, 6, 9, 0, 12, 0, 13, 0, 27, -14, 27, -16, 33, -22, 37, -22 )
