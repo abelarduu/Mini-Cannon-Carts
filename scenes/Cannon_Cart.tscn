@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://scenes/Cannon_cart_blue.tres" type="SpriteFrames" id=1]
+[ext_resource path="res://scenes/Spriteframes/Cannon_cart_blue.tres" type="SpriteFrames" id=1]
 [ext_resource path="res://scripts/Cannon_cart.gd" type="Script" id=2]
 [ext_resource path="res://assets/sprites/shadow cart.png" type="Texture" id=4]
 
@@ -21,7 +21,8 @@ rotation = -1.5708
 scale = Vector2( 2, 2 )
 z_index = 1
 frames = ExtResource( 1 )
-animation = "idle"
+animation = "shot"
+frame = 6
 playing = true
 
 [node name="spawn_bomb_point" type="Position2D" parent="."]

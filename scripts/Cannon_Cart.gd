@@ -3,11 +3,11 @@ extends KinematicBody2D
 var mov: Vector2
 var speed= 200
 var BOMBS_GROUP= "Bomb-" + str(self)
-#Assets
 var pre_bomb= preload("res://scenes/Bomb.tscn")
-export (int, "Blue", "Red") var index
-
-var type_frames= ["res://scenes/Cannon_cart_blue.tres", "res://scenes/Cannon_cart_red.tres"]
+var attack: bool
+#Assets
+export (int, "Blue", "Red") var index setget set_index
+var type_frames= ["res://scenes/Spriteframes/Cannon_cart_blue.tres", "res://scenes/Spriteframes/Cannon_cart_red.tres"]
 var attack_inputs= ["P1_attack", "P2_attack"] 
 var mov_inputs= [["P1_left","P1_right","P1_up", "P1_down"],
 				 ["P2_left","P2_right","P2_up", "P2_down"]]
@@ -31,20 +31,26 @@ func _physics_process(_delta):
 		mov_animate()
 		
 		if Input.is_action_just_pressed(attack_inputs[index]):
-			if get_tree().get_nodes_in_group(BOMBS_GROUP).size() <3:
+			if get_tree().get_nodes_in_group(BOMBS_GROUP).size() <2:
+				attack= true
 				spawn_bomb()
 
 		look_at(enemys_pos[index])
 		mov= move_and_slide(mov * speed)
-		
+
 func spawn_bomb():
 	var bomb= pre_bomb.instance()
 	bomb.add_to_group(BOMBS_GROUP)
+	bomb.index= index
 	bomb.position= $spawn_bomb_point.global_position
 	bomb.mov= Vector2(cos(rotation), sin(rotation)).normalized()
 	$"../".add_child(bomb)
 	
 func mov_animate():
+	if attack: 
+		$AnimatedSprite.animation="shot"
+		yield($AnimatedSprite, "animation_finished")
+		attack=false
 	if mov.length_squared() > 0:
 		$AnimatedSprite.animation= "run"
 	else: $AnimatedSprite.animation= "idle"

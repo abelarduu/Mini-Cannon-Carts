@@ -67,21 +67,27 @@ position = Vector2( 392, 373 )
 
 [node name="Box7" parent="objects/boxes" instance=ExtResource( 2 )]
 position = Vector2( 628, 229 )
+index = 1
 
 [node name="Box8" parent="objects/boxes" instance=ExtResource( 2 )]
 position = Vector2( 628, 301 )
+index = 1
 
 [node name="Box9" parent="objects/boxes" instance=ExtResource( 2 )]
 position = Vector2( 628, 373 )
+index = 1
 
 [node name="Box10" parent="objects/boxes" instance=ExtResource( 2 )]
 position = Vector2( 980, 228 )
+index = 1
 
 [node name="Box11" parent="objects/boxes" instance=ExtResource( 2 )]
 position = Vector2( 980, 300 )
+index = 1
 
 [node name="Box12" parent="objects/boxes" instance=ExtResource( 2 )]
 position = Vector2( 980, 372 )
+index = 1
 
 [node name="barrels" type="Node2D" parent="objects"]
 
@@ -95,20 +101,21 @@ position = Vector2( 87, 86 )
 [node name="Barrel3" parent="objects/barrels" instance=ExtResource( 4 )]
 position = Vector2( 937, 514 )
 rotation = -3.14159
+index = 1
 
 [node name="Barrel4" parent="objects/barrels" instance=ExtResource( 4 )]
 position = Vector2( 938, 87 )
 rotation = 1.5708
+index = 1
 
 [node name="containers" type="Node2D" parent="objects"]
 
 [node name="Contanier" parent="objects/containers" instance=ExtResource( 5 )]
 position = Vector2( 288, 301 )
-rotation = 1.5708
 
 [node name="Contanier2" parent="objects/containers" instance=ExtResource( 5 )]
 position = Vector2( 732, 301 )
-rotation = 1.5708
+index = 1
 
 [node name="Player1" parent="." instance=ExtResource( 1 )]
 position = Vector2( 169, 296 )
