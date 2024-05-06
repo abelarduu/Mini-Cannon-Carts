@@ -14,11 +14,7 @@ scale = Vector2( 2, 2 )
 frames = ExtResource( 1 )
 animation = "idle"
 
-[node name="Collision_Area" type="Area2D" parent="."]
-scale = Vector2( 2, 2 )
-
-[node name="Collision" type="CollisionShape2D" parent="Collision_Area"]
-scale = Vector2( 0.5, 0.5 )
+[node name="Collision_Area" type="CollisionShape2D" parent="."]
 shape = SubResource( 2 )
 
-[connection signal="body_entered" from="Collision_Area" to="." method="_on_Collision_Area_body_entered"]
+[connection signal="body_entered" from="." to="." method="_on_Bomb_body_entered"]

@@ -1,6 +1,7 @@
 tool
 extends KinematicBody2D
 var mov: Vector2
+var life= 100
 var speed= 200
 var BOMBS_GROUP= "Bomb-" + str(self)
 var pre_bomb= preload("res://scenes/Bomb.tscn")
@@ -22,20 +23,21 @@ func _draw():
 	
 func _physics_process(_delta):
 	if not Engine.editor_hint:
-		mov= Vector2.ZERO
-		if Input.is_action_pressed(mov_inputs[index][0]): mov.x= -1
-		if Input.is_action_pressed(mov_inputs[index][1]): mov.x= 1
-		if Input.is_action_pressed(mov_inputs[index][2]): mov.y= -1
-		if Input.is_action_pressed(mov_inputs[index][3]): mov.y= 1
-		mov_animate()
-		
-		if Input.is_action_just_pressed(attack_inputs[index]):
-			if get_tree().get_nodes_in_group(BOMBS_GROUP).size() <2:
-				attack= true
-				spawn_bomb()
-		#print(index)
-		look_at(get_parent().player2_position if index == 0 else get_parent().player1_position)
-		mov= move_and_slide(mov * speed)
+		if life > 0:
+			mov= Vector2.ZERO
+			if Input.is_action_pressed(mov_inputs[index][0]): mov.x= -1
+			if Input.is_action_pressed(mov_inputs[index][1]): mov.x= 1
+			if Input.is_action_pressed(mov_inputs[index][2]): mov.y= -1
+			if Input.is_action_pressed(mov_inputs[index][3]): mov.y= 1
+			mov_animate()
+			
+			if Input.is_action_just_pressed(attack_inputs[index]):
+				if get_tree().get_nodes_in_group(BOMBS_GROUP).size() <2:
+					attack= true
+					spawn_bomb()
+			
+			look_at(get_parent().player2_position if index == 0 else get_parent().player1_position)
+			mov= move_and_slide(mov * speed)
 
 func spawn_bomb():
 	var bomb= pre_bomb.instance()
