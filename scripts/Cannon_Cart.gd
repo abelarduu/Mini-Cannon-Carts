@@ -21,7 +21,6 @@ func _draw():
 	$AnimatedSprite.frames= load(type_frames[index])
 	
 func _physics_process(_delta):
-	var enemys_pos=[get_parent().player2_position, get_parent().player1_position]
 	if not Engine.editor_hint:
 		mov= Vector2.ZERO
 		if Input.is_action_pressed(mov_inputs[index][0]): mov.x= -1
@@ -34,8 +33,8 @@ func _physics_process(_delta):
 			if get_tree().get_nodes_in_group(BOMBS_GROUP).size() <2:
 				attack= true
 				spawn_bomb()
-
-		look_at(enemys_pos[index])
+		#print(index)
+		look_at(get_parent().player2_position if index == 0 else get_parent().player1_position)
 		mov= move_and_slide(mov * speed)
 
 func spawn_bomb():

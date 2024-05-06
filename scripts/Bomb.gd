@@ -9,6 +9,6 @@ func _draw():
 	
 func _physics_process(delta):
 	translate(mov * speed * delta)
-	print(get_parent())
+	
 func _on_Collision_Area_body_entered(_body):
 	queue_free()

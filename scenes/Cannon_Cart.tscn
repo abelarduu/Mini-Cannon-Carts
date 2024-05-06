@@ -26,4 +26,4 @@ frame = 6
 playing = true
 
 [node name="spawn_bomb_point" type="Position2D" parent="."]
-position = Vector2( 74, 0 )
+position = Vector2( 70, 0 )
