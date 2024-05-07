@@ -27,3 +27,10 @@ playing = true
 
 [node name="spawn_bomb_point" type="Position2D" parent="."]
 position = Vector2( 70, 0 )
+
+[node name="lifeBar" type="ProgressBar" parent="."]
+modulate = Color( 0.462745, 0.588235, 0.870588, 1 )
+margin_left = -64.0
+margin_top = 32.0
+margin_bottom = 46.0
+rect_rotation = -90.0683

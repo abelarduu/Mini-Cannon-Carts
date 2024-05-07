@@ -24,7 +24,9 @@ func set_index(val):
 
 func _draw():
 	$AnimatedSprite.frames= load(type_frames[index])
-	
+	#if index == 0: $lifeBar.Color  = Color("#7696de") 
+	#elif index == 1: $lifeBar.modulate  = Color("#d4186c")
+
 func _physics_process(_delta):
 	if not Engine.editor_hint:
 		if life > 0:
@@ -40,6 +42,7 @@ func _physics_process(_delta):
 					attack= true
 					spawn_bomb()
 			
+			$lifeBar.value= life
 			look_at(get_parent().player2_position if index == 0 else get_parent().player1_position)
 			mov= move_and_slide(mov * speed)
 

@@ -2,7 +2,7 @@ extends Area2D
 var index: int
 var mov: Vector2
 var speed= 250
-var damage= 30
+var damage= 25
 var type_frames= ["res://scenes/Spriteframes/Blue_bomb.tres",
 				  "res://scenes/Spriteframes/Red_bomb.tres"]
 
