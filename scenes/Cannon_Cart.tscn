@@ -1,8 +1,19 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://scenes/Spriteframes/Cannon_cart_blue.tres" type="SpriteFrames" id=1]
 [ext_resource path="res://scripts/Cannon_cart.gd" type="Script" id=2]
 [ext_resource path="res://assets/sprites/shadow cart.png" type="Texture" id=4]
+
+[sub_resource type="StyleBoxFlat" id=1]
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color( 0, 0, 0, 1 )
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
 
 [node name="Cannon_cart" type="KinematicBody2D"]
 script = ExtResource( 2 )
@@ -30,7 +41,10 @@ position = Vector2( 70, 0 )
 
 [node name="lifeBar" type="ProgressBar" parent="."]
 modulate = Color( 0.462745, 0.588235, 0.870588, 1 )
-margin_left = -64.0
+margin_left = -69.0
 margin_top = 32.0
-margin_bottom = 46.0
+margin_right = -4.99999
+margin_bottom = 52.0
 rect_rotation = -90.0683
+custom_styles/fg = SubResource( 1 )
+value = 100.0

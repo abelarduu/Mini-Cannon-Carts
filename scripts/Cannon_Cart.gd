@@ -24,8 +24,7 @@ func set_index(val):
 
 func _draw():
 	$AnimatedSprite.frames= load(type_frames[index])
-	#if index == 0: $lifeBar.Color  = Color("#7696de") 
-	#elif index == 1: $lifeBar.modulate  = Color("#d4186c")
+	$lifeBar.modulate= Color("#7696de") if index == 0 else Color("#d4186c")
 
 func _physics_process(_delta):
 	if not Engine.editor_hint:
