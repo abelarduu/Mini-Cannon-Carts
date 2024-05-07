@@ -8,6 +8,7 @@ extents = Vector2( 32, 32 )
 
 [node name="Box" type="StaticBody2D"]
 script = ExtResource( 1 )
+life = 50
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 scale = Vector2( 2, 2 )
