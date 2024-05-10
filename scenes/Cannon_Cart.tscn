@@ -2,7 +2,7 @@
 
 [ext_resource path="res://scenes/Spriteframes/Cannon_cart_blue.tres" type="SpriteFrames" id=1]
 [ext_resource path="res://scripts/Cannon_cart.gd" type="Script" id=2]
-[ext_resource path="res://assets/sprites/shadow cart.png" type="Texture" id=4]
+[ext_resource path="res://assets/sprites/cannon_carts_animate.png" type="Texture" id=3]
 
 [sub_resource type="StyleBoxFlat" id=1]
 border_width_left = 3
@@ -25,7 +25,9 @@ polygon = PoolVector2Array( 20, 23, 20, 29, 22, 29, 24, 31, 24, 37, 20, 41, 16, 
 [node name="ShadowCart" type="Sprite" parent="."]
 rotation = -1.5708
 scale = Vector2( 2, 2 )
-texture = ExtResource( 4 )
+texture = ExtResource( 3 )
+region_enabled = true
+region_rect = Rect2( -0.273537, 148.918, 46.5235, 47.2892 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 rotation = -1.5708

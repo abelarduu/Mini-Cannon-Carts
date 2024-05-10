@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/shadow cart.png-0fcac8955b49af6c060e4b96276e242e.stex"
+path="res://.import/cannon_carts_animate.png-5d5f6e69cb7a2df23abb50f152dea227.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/shadow cart.png"
-dest_files=[ "res://.import/shadow cart.png-0fcac8955b49af6c060e4b96276e242e.stex" ]
+source_file="res://assets/sprites/cannon_carts_animate.png"
+dest_files=[ "res://.import/cannon_carts_animate.png-5d5f6e69cb7a2df23abb50f152dea227.stex" ]
 
 [params]
 
