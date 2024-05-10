@@ -32,12 +32,11 @@ rotation = -1.5708
 scale = Vector2( 2, 2 )
 z_index = 1
 frames = ExtResource( 1 )
-animation = "shot"
-frame = 6
+animation = "idle"
 playing = true
 
 [node name="spawn_bomb_point" type="Position2D" parent="."]
-position = Vector2( 70, 0 )
+position = Vector2( 64, 0 )
 
 [node name="lifeBar" type="ProgressBar" parent="."]
 modulate = Color( 0.462745, 0.588235, 0.870588, 1 )

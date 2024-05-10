@@ -1,9 +1,10 @@
 tool
 extends StaticBody2D
-export (int) var life
-#Assets
-export (int , "Box", "Barrel","Contanier") var type_objects
+var objs_life= [50, 90, 120]
+export (int , "Box", "Barrel", "Contanier") var type_objects
 export (int, "Blue", "Red") var index setget set_index
+onready var life= objs_life[type_objects]
+
 var types_frames_box= ["res://scenes/Spriteframes/Blue_box.tres",
 					   "res://scenes/Spriteframes/Red_box.tres"]
 
@@ -24,4 +25,7 @@ func _draw():
 	if type_objects == 2: $AnimatedSprite.frames= load(types_frames_container[index])
 
 func damage_animate():
-	pass
+	if life <= 0: 
+		$AnimatedSprite.animation= "destroyed"
+		yield($AnimatedSprite, "animation_finished")
+	else: $AnimatedSprite.animation= "idle"

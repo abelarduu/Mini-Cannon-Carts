@@ -16,5 +16,7 @@ func _on_Bomb_body_entered(body):
 	if not "walls" in body.name:
 		body.life-= damage
 		if body.life <= 0:
-			body.queue_free()
+			if "Box" in body.name:
+				body.damage_animate() 
+			else:body.queue_free()
 	queue_free()
