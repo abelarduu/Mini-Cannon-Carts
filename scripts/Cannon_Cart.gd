@@ -6,6 +6,7 @@ var life= 100
 var speed= 200
 var BOMBS_GROUP= "Bomb-" + str(self)
 var travel= 0
+
 #Assets
 onready var pre_bomb= preload("res://scenes/Bomb.tscn")
 onready var pre_track= preload("res://scenes/wheel_track.tscn")
@@ -52,7 +53,7 @@ func spawn_bomb():
 	var bomb= pre_bomb.instance()
 	bomb.add_to_group(BOMBS_GROUP)
 	bomb.index= index
-	bomb.z_index= z_index -1
+	bomb.z_index= z_index
 	bomb.position= $spawn_bomb_point.global_position
 	bomb.mov= Vector2(cos(rotation), sin(rotation)).normalized()
 	$"../".add_child(bomb)
