@@ -119,9 +119,11 @@ index = 1
 
 [node name="Player1" parent="." instance=ExtResource( 1 )]
 position = Vector2( 169, 296 )
+z_index = 2
 collision_layer = 0
 
 [node name="Player2" parent="." instance=ExtResource( 1 )]
 position = Vector2( 855, 294 )
 rotation = 3.14159
+z_index = 2
 index = 1

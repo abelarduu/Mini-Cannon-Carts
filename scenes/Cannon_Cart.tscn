@@ -16,6 +16,7 @@ corner_radius_bottom_right = 3
 corner_radius_bottom_left = 3
 
 [node name="Cannon_cart" type="KinematicBody2D"]
+z_index = 1
 script = ExtResource( 2 )
 
 [node name="Collision" type="CollisionPolygon2D" parent="."]
@@ -25,6 +26,7 @@ polygon = PoolVector2Array( 20, 23, 20, 29, 22, 29, 24, 31, 24, 37, 20, 41, 16, 
 [node name="ShadowCart" type="Sprite" parent="."]
 rotation = -1.5708
 scale = Vector2( 2, 2 )
+z_index = -1
 texture = ExtResource( 3 )
 region_enabled = true
 region_rect = Rect2( -0.273537, 148.918, 46.5235, 47.2892 )

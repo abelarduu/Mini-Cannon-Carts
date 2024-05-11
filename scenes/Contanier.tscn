@@ -8,6 +8,7 @@ extents = Vector2( 104, 64 )
 
 [node name="Contanier" type="StaticBody2D"]
 rotation = 1.5708
+z_index = 1
 script = ExtResource( 1 )
 type_objects = 2
 

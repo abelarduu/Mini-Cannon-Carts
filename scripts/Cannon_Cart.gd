@@ -5,9 +5,10 @@ var attack: bool
 var life= 100
 var speed= 200
 var BOMBS_GROUP= "Bomb-" + str(self)
-var pre_bomb= preload("res://scenes/Bomb.tscn")
 
 #Assets
+onready var pre_bomb= preload("res://scenes/Bomb.tscn")
+onready var pre_track= preload("res://scenes/wheel_track.tscn")
 export (int, "Blue", "Red") var index setget set_index
 var type_frames= ["res://scenes/Spriteframes/Cannon_cart_blue.tres", 
 				  "res://scenes/Spriteframes/Cannon_cart_red.tres"]
@@ -30,10 +31,11 @@ func _physics_process(_delta):
 	if not Engine.editor_hint:
 		if life > 0:
 			mov= Vector2.ZERO
-			if Input.is_action_pressed(mov_inputs[index][0]): mov.x= -1
+			if Input.is_action_pressed(mov_inputs[index][0]): mov.x=-1
 			if Input.is_action_pressed(mov_inputs[index][1]): mov.x= 1
-			if Input.is_action_pressed(mov_inputs[index][2]): mov.y= -1
+			if Input.is_action_pressed(mov_inputs[index][2]): mov.y=-1
 			if Input.is_action_pressed(mov_inputs[index][3]): mov.y= 1
+			add_wheel_track()
 			mov_animate()
 			
 			if Input.is_action_just_pressed(attack_inputs[index]):
@@ -61,3 +63,9 @@ func mov_animate():
 	if mov.length_squared() > 0:
 		$AnimatedSprite.animation= "run"
 	else: $AnimatedSprite.animation= "idle"
+	
+func add_wheel_track():
+	var track= pre_track.instance()
+	track.position+= position
+	track.rotation= rotation
+	$"../".add_child(track)
