@@ -5,7 +5,7 @@ var attack: bool
 var life= 100
 var speed= 200
 var BOMBS_GROUP= "Bomb-" + str(self)
-
+var travel= 0
 #Assets
 onready var pre_bomb= preload("res://scenes/Bomb.tscn")
 onready var pre_track= preload("res://scenes/wheel_track.tscn")
@@ -46,11 +46,13 @@ func _physics_process(_delta):
 			$lifeBar.value= life
 			look_at(get_parent().player2_position if index == 0 else get_parent().player1_position)
 			mov= move_and_slide(mov * speed)
+			travel+= mov.length()
 
 func spawn_bomb():
 	var bomb= pre_bomb.instance()
 	bomb.add_to_group(BOMBS_GROUP)
 	bomb.index= index
+	bomb.z_index= z_index -1
 	bomb.position= $spawn_bomb_point.global_position
 	bomb.mov= Vector2(cos(rotation), sin(rotation)).normalized()
 	$"../".add_child(bomb)
@@ -68,4 +70,5 @@ func add_wheel_track():
 	var track= pre_track.instance()
 	track.position+= position
 	track.rotation= rotation
+	track.z_index= z_index -1
 	$"../".add_child(track)

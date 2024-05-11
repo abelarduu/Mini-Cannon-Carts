@@ -1,8 +1,10 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://assets/sprites/cannon_carts_animate.png" type="Texture" id=1]
+[ext_resource path="res://scripts/wheel_track.gd" type="Script" id=2]
 
 [node name="wheel_track" type="Node2D"]
+script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
 rotation = -1.5708
@@ -10,3 +12,8 @@ scale = Vector2( 2, 2 )
 texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( 50, 154, 42, 28 )
+
+[node name="Timer_queue" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="Timer_queue" to="." method="_on_Timer_queue_timeout"]
