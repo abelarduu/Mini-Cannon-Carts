@@ -16,6 +16,7 @@ scale = Vector2( 2, 2 )
 z_index = 1
 frames = ExtResource( 1 )
 animation = "idle"
+playing = true
 
 [node name="Collision" type="CollisionShape2D" parent="."]
 position = Vector2( -43, 6 )

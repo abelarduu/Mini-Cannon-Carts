@@ -15,7 +15,7 @@ extents = Vector2( 10, 305 )
 [node name="Main_scene" type="Node2D"]
 script = ExtResource( 3 )
 __meta__ = {
-"_edit_horizontal_guides_": [ 8.0, 592.0 ],
+"_edit_horizontal_guides_": [ 8.0, 592.0, 424.0, 208.0, 344.0 ],
 "_edit_vertical_guides_": [ 8.0, 1016.0 ]
 }
 
@@ -57,24 +57,24 @@ position = Vector2( 44, 300 )
 position = Vector2( 44, 372 )
 
 [node name="Box4" parent="objects/boxes" instance=ExtResource( 2 )]
-position = Vector2( 392, 229 )
+position = Vector2( 400, 228 )
 
 [node name="Box5" parent="objects/boxes" instance=ExtResource( 2 )]
-position = Vector2( 392, 301 )
+position = Vector2( 400, 300 )
 
 [node name="Box6" parent="objects/boxes" instance=ExtResource( 2 )]
-position = Vector2( 392, 373 )
+position = Vector2( 400, 372 )
 
 [node name="Box7" parent="objects/boxes" instance=ExtResource( 2 )]
-position = Vector2( 628, 229 )
+position = Vector2( 624, 228 )
 index = 1
 
 [node name="Box8" parent="objects/boxes" instance=ExtResource( 2 )]
-position = Vector2( 628, 301 )
+position = Vector2( 624, 300 )
 index = 1
 
 [node name="Box9" parent="objects/boxes" instance=ExtResource( 2 )]
-position = Vector2( 628, 373 )
+position = Vector2( 624, 372 )
 index = 1
 
 [node name="Box10" parent="objects/boxes" instance=ExtResource( 2 )]
@@ -92,11 +92,11 @@ index = 1
 [node name="barrels" type="Node2D" parent="objects"]
 
 [node name="Barrel" parent="objects/barrels" instance=ExtResource( 4 )]
-position = Vector2( 86, 513 )
+position = Vector2( 85.6096, 512.937 )
 rotation = -1.57079
 
 [node name="Barrel2" parent="objects/barrels" instance=ExtResource( 4 )]
-position = Vector2( 87, 86 )
+position = Vector2( 87.4019, 85.765 )
 
 [node name="Barrel3" parent="objects/barrels" instance=ExtResource( 4 )]
 position = Vector2( 937, 514 )
@@ -104,26 +104,26 @@ rotation = -3.14159
 index = 1
 
 [node name="Barrel4" parent="objects/barrels" instance=ExtResource( 4 )]
-position = Vector2( 938, 87 )
+position = Vector2( 938.357, 87.0067 )
 rotation = 1.5708
 index = 1
 
 [node name="containers" type="Node2D" parent="objects"]
 
 [node name="Contanier" parent="objects/containers" instance=ExtResource( 5 )]
-position = Vector2( 288, 301 )
+position = Vector2( 296, 300 )
 
 [node name="Contanier2" parent="objects/containers" instance=ExtResource( 5 )]
-position = Vector2( 732, 301 )
+position = Vector2( 728, 300 )
 index = 1
 
 [node name="Player1" parent="." instance=ExtResource( 1 )]
-position = Vector2( 169, 296 )
+position = Vector2( 169, 280 )
 z_index = 2
 collision_layer = 0
 
 [node name="Player2" parent="." instance=ExtResource( 1 )]
-position = Vector2( 855, 294 )
+position = Vector2( 856, 282 )
 rotation = 3.14159
 z_index = 2
 index = 1

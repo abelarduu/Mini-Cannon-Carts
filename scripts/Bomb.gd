@@ -15,8 +15,10 @@ func _physics_process(delta):
 func _on_Bomb_body_entered(body):
 	if not "walls" in body.name:
 		body.life-= damage
+
 		if body.life <= 0:
-			if "Box" in body.name:
+			if not "Contanier" in body.name:
 				body.damage_animate() 
 			else:body.queue_free()
 	queue_free()
+	

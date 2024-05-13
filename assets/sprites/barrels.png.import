@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/blue_barrel.png-96adcb20853c33c175b843771073cb51.stex"
+path="res://.import/barrels.png-2f486e4a7e525cacb7433ed3789a134d.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/blue_barrel.png"
-dest_files=[ "res://.import/blue_barrel.png-96adcb20853c33c175b843771073cb51.stex" ]
+source_file="res://assets/sprites/barrels.png"
+dest_files=[ "res://.import/barrels.png-2f486e4a7e525cacb7433ed3789a134d.stex" ]
 
 [params]
 

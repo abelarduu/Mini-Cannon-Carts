@@ -18,7 +18,7 @@ func set_index(val):
 	index= val
 	if Engine.editor_hint:
 		update()
-		
+
 func _draw():
 	if type_objects == 0: $AnimatedSprite.frames= load(types_frames_box[index])
 	if type_objects == 1: $AnimatedSprite.frames= load(types_frames_barrel[index])
