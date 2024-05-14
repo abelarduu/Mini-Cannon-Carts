@@ -17,6 +17,7 @@ scale = Vector2( 2, 2 )
 z_index = 1
 frames = ExtResource( 2 )
 animation = "idle"
+playing = true
 
 [node name="Collision" type="CollisionShape2D" parent="."]
 shape = SubResource( 2 )

@@ -17,7 +17,7 @@ func _on_Bomb_body_entered(body):
 		body.life-= damage
 
 		if body.life <= 0:
-			if not "Contanier" in body.name and not "Player" in body.name:
+			if not"Player" in body.name:
 				body.damage_animate()
 			else:body.queue_free()
 	queue_free()
