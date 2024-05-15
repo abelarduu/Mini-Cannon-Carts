@@ -20,5 +20,10 @@ func _on_Bomb_body_entered(body):
 			if not"Player" in body.name:
 				body.damage_animate()
 			else:body.queue_free()
+			
+	mov*= Vector2.ZERO
+	$AnimatedSprite.scale= Vector2(4, 4)
+	$AnimatedSprite.animation= "destroyed"
+	yield($AnimatedSprite, "animation_finished")
 	queue_free()
 	
