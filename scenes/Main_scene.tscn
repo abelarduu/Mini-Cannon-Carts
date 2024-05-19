@@ -15,7 +15,7 @@ extents = Vector2( 10, 305 )
 [node name="Main_scene" type="Node2D"]
 script = ExtResource( 3 )
 __meta__ = {
-"_edit_horizontal_guides_": [ 8.0, 592.0, 424.0, 208.0, 344.0 ],
+"_edit_horizontal_guides_": [ 8.0, 592.0, 408.0, 192.0 ],
 "_edit_vertical_guides_": [ 8.0, 1016.0 ]
 }
 
