@@ -2,7 +2,7 @@ extends Area2D
 var index: int
 var mov: Vector2
 var speed= 250
-var damage= 25
+var damage= 20
 var type_frames= ["res://scenes/Spriteframes/Blue_bomb.tres",
 				  "res://scenes/Spriteframes/Red_bomb.tres"]
 
@@ -16,9 +16,7 @@ func _on_Bomb_body_entered(body):
 	if not "walls" in body.name:
 		body.life-= damage
 		if body.life <= 0:
-			if not"Player" in body.name:
-				body.damage_animate()
-			else:body.queue_free()
+			body.damage_animate()
 		
 	z_index= 3
 	mov*= Vector2.ZERO

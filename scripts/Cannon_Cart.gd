@@ -71,5 +71,9 @@ func add_wheel_track():
 	var track= pre_track.instance()
 	track.position+= position
 	track.rotation= rotation
-	track.z_index= z_index -1
+	track.z_index= z_index -2
 	$"../".add_child(track)
+	
+func damage_animate():
+	$lifeBar.value= life
+	$AnimatedSprite.animation= "destroyed"

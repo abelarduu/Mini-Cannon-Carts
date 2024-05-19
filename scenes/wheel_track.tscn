@@ -11,7 +11,7 @@ rotation = -1.5708
 scale = Vector2( 2, 2 )
 texture = ExtResource( 1 )
 region_enabled = true
-region_rect = Rect2( 50, 154, 42, 28 )
+region_rect = Rect2( 42, 154, 42, 28 )
 
 [node name="Timer_queue" type="Timer" parent="."]
 autostart = true
