@@ -17,7 +17,7 @@ func _on_Bomb_body_entered(body):
 		body.life-= damage
 		if body.life <= 0:
 			body.damage_animate()
-		
+
 	z_index= 3
 	mov*= Vector2.ZERO
 	$AnimatedSprite.scale= Vector2(4, 4)

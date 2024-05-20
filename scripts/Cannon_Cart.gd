@@ -59,13 +59,15 @@ func spawn_bomb():
 	$"../".add_child(bomb)
 	
 func mov_animate():
-	if attack: 
-		$AnimatedSprite.animation="shot"
-		yield($AnimatedSprite, "animation_finished")
-		attack=false
-	if mov.length_squared() > 0:
-		$AnimatedSprite.animation= "run"
-	else: $AnimatedSprite.animation= "idle"
+	if life> 0:
+		if attack: 
+			$AnimatedSprite.animation="shot"
+			yield($AnimatedSprite, "animation_finished")
+			attack=false
+		if mov.length_squared() > 0:
+			$AnimatedSprite.animation= "run"
+		else: $AnimatedSprite.animation= "idle"
+	else: damage_animate()
 	
 func add_wheel_track():
 	var track= pre_track.instance()
