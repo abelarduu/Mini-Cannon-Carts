@@ -129,7 +129,27 @@ rotation = 3.14159
 z_index = 2
 index = 1
 
-[node name="game_over_sprite" type="Sprite" parent="."]
+[node name="HUD" type="CanvasLayer" parent="."]
+
+[node name="Player1_Scores" type="Label" parent="HUD"]
+margin_left = 512.0
+margin_right = 672.0
+margin_bottom = 30.0
+rect_scale = Vector2( 2, 2 )
+text = "0"
+align = 1
+valign = 1
+
+[node name="Player2_Scores" type="Label" parent="HUD"]
+margin_left = 192.0
+margin_right = 353.0
+margin_bottom = 30.0
+rect_scale = Vector2( 2, 2 )
+text = "0"
+align = 1
+valign = 1
+
+[node name="game_over_sprite" type="Sprite" parent="HUD"]
 visible = false
 position = Vector2( 510.75, 300 )
 scale = Vector2( 6.25, 6.25 )

@@ -2,6 +2,7 @@ tool
 extends KinematicBody2D
 var mov: Vector2
 var attack: bool
+var scores= 0
 var life= 100
 var speed= 200
 var BOMBS_GROUP= "Bomb-" + str(self)
