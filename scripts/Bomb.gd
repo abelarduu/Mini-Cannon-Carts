@@ -1,4 +1,5 @@
 extends Area2D
+var parent
 var index: int
 var mov: Vector2
 var speed= 250
@@ -17,6 +18,7 @@ func _on_Bomb_body_entered(body):
 		body.life-= damage
 		if body.life <= 0:
 			body.damage_animate()
+			parent.scores += 15
 	
 	z_index= 3
 	mov*= Vector2.ZERO

@@ -141,12 +141,12 @@ region_rect = Rect2( 0, 0, 176, 141 )
 
 [node name="game_over_sprite" type="Sprite" parent="HUD"]
 visible = false
-position = Vector2( 512.021, 300 )
+position = Vector2( 508.021, 300 )
 scale = Vector2( 4.25532, 4.25532 )
 z_index = 3
 texture = ExtResource( 6 )
 region_enabled = true
-region_rect = Rect2( 0, 141, 176, 141 )
+region_rect = Rect2( 0, 141, 178, 141 )
 
 [node name="Player1_Scores" type="Label" parent="HUD"]
 margin_left = 512.0

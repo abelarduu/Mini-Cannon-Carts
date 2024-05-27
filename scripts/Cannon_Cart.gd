@@ -8,9 +8,9 @@ var speed= 200
 var BOMBS_GROUP= "Bomb-" + str(self)
 
 #Assets
+export (int, "Blue", "Red") var index setget set_index
 onready var pre_bomb= preload("res://scenes/Bomb.tscn")
 onready var pre_track= preload("res://scenes/wheel_track.tscn")
-export (int, "Blue", "Red") var index setget set_index
 var type_frames= ["res://scenes/Spriteframes/Cannon_cart_blue.tres", 
 				  "res://scenes/Spriteframes/Cannon_cart_red.tres"]
 
@@ -51,6 +51,7 @@ func _physics_process(_delta):
 func spawn_bomb():
 	var bomb= pre_bomb.instance()
 	bomb.add_to_group(BOMBS_GROUP)
+	bomb.parent= self
 	bomb.index= index
 	bomb.z_index= z_index
 	bomb.position= $spawn_bomb_point.global_position
