@@ -24,4 +24,3 @@ func _on_Bomb_body_entered(body):
 	$AnimatedSprite.animation= "destroyed"
 	yield($AnimatedSprite, "animation_finished")
 	queue_free()
-	
