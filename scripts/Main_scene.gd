@@ -4,6 +4,7 @@ onready var player2= get_node("Player2")
 var player1_position: Vector2
 var player2_position: Vector2
 var play= false
+
 func _draw():
 	$HUD/game_over_sprite.scale=Vector2(10,10)
 func _physics_process(_delta):
@@ -21,7 +22,7 @@ func _physics_process(_delta):
 			if $HUD/game_over_sprite.scale >= Vector2(4.5, 4.5):
 				$HUD/game_over_sprite.scale-= Vector2(0.25,0.25)
 	else: move_obj($HUD/game_icon,Vector2(491.020996, 295),5)
-	
+		
 func _input(event):
 	if event is InputEventKey:
 		if $HUD/game_icon.position >= Vector2(491.020996, 295):
