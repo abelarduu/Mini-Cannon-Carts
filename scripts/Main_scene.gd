@@ -21,8 +21,9 @@ func _physics_process(_delta):
 
 func _input(event):
 	if event is InputEventKey:
-		if event.pressed:
-			play= true
+		if $HUD/game_icon.position >= Vector2(491.020996, 295):
+			if event.pressed:
+				play= true
 
 func check_player(player) -> bool:
 	if is_instance_valid(player):
