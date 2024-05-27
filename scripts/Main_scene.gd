@@ -10,10 +10,10 @@ func _physics_process(_delta):
 	if check_player(player2): player2_position= player2.position
 	
 	#HUD
-	if play: $HUD/game_icon.visible= false
-	if $HUD/game_icon.global_position <=  Vector2(491.020996, 295):
-		$HUD/game_icon.position+= Vector2(0, 5)
-			
+	if play: 
+		move_obj($HUD/game_icon,Vector2(491.020996, -190),-5)
+	else: move_obj($HUD/game_icon,Vector2(491.020996, 295),5)
+	
 	$HUD/Player1_Scores.text= str(player1.scores)
 	$HUD/Player2_Scores.text= str(player2.scores)
 	if not check_player(player1) or not check_player(player2):
@@ -21,12 +21,15 @@ func _physics_process(_delta):
 
 func _input(event):
 	if event is InputEventKey:
-		if Input.is_action_just_pressed("ui_select"):
-			if event.pressed:
-				play= true
+		if event.pressed:
+			play= true
 
 func check_player(player) -> bool:
 	if is_instance_valid(player):
 		if player.life > 0:
 			return true
 	return false
+	
+func move_obj(obj, new_pos, steps):
+	if not obj.position == new_pos:
+		obj.position+= Vector2(0, steps)
