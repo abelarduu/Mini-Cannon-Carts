@@ -31,7 +31,6 @@ func _draw():
 func _physics_process(_delta):
 	if not Engine.editor_hint:
 		if life > 0 and get_parent().play:
-			print(position)
 			mov= Vector2.ZERO
 			if Input.is_action_pressed(mov_inputs[index][0]): mov.x=-1
 			if Input.is_action_pressed(mov_inputs[index][1]): mov.x= 1
