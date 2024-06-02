@@ -30,10 +30,8 @@ func _input(event):
 			
 			if $HUD/game_over_sprite.scale <= Vector2(4.5, 4.5):
 				$HUD/game_over_sprite.scale=Vector2(10,10)
+				reset_game()
 				$HUD/game_over_sprite.visible= false
-				player1.reset()
-				player2.reset()
-				play= false
 
 func check_player(player) -> bool:
 	if is_instance_valid(player):
@@ -44,3 +42,9 @@ func check_player(player) -> bool:
 func move_obj(obj, new_pos, steps):
 	if not obj.position == new_pos:
 		obj.position+= Vector2(0, steps)
+
+func reset_game():
+	for node in get_children():
+		if node.has_method("reset"):
+			node.reset()
+	play= false

@@ -1,10 +1,10 @@
 tool
 extends StaticBody2D
-var get_score: bool = true
 var objs_life= [50, 90, 120]
 export (int , "Box", "Barrel", "Contanier") var type_objects
 export (int, "Blue", "Red") var index setget set_index
 onready var life= objs_life[type_objects]
+onready var self_point= life/2
 
 var types_frames_box= ["res://scenes/Spriteframes/Blue_box.tres",
 					   "res://scenes/Spriteframes/Red_box.tres"]
@@ -30,3 +30,7 @@ func damage_animate():
 		$AnimatedSprite.animation= "destroyed"
 		yield($AnimatedSprite, "animation_finished")
 	else: $AnimatedSprite.animation= "idle"
+
+func reset():
+	life= objs_life[type_objects]
+	$AnimatedSprite.animation= "idle"

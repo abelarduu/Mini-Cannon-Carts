@@ -17,10 +17,10 @@ func _on_Bomb_body_entered(body):
 	if not "walls" in body.name:
 		body.life-= damage
 		
-		if body.life <= 0 and body.get_score:
+		if body.life <= 0:
 			body.damage_animate()
-			parent.scores += 20
-			body.get_score= false
+			parent.scores += body.self_point
+			body.self_point= 0
 	
 	z_index= 3
 	mov*= Vector2.ZERO
