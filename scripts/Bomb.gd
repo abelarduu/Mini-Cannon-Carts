@@ -16,9 +16,11 @@ func _physics_process(delta):
 func _on_Bomb_body_entered(body):
 	if not "walls" in body.name:
 		body.life-= damage
-		if body.life <= 0:
+		
+		if body.life <= 0 and body.get_score:
 			body.damage_animate()
-			parent.scores += 15
+			parent.scores += 20
+			body.get_score= false
 	
 	z_index= 3
 	mov*= Vector2.ZERO

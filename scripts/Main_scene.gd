@@ -24,9 +24,10 @@ func _physics_process(_delta):
 func _input(event):
 	if event is InputEventKey:
 		if event.pressed:
-			if $HUD/game_icon_sprite.position >= Vector2(491.020996, 295):
-				play= true
-				
+			if not play:
+				if $HUD/game_icon_sprite.position >= Vector2(491.020996, 295):
+					play= true
+			
 			if $HUD/game_over_sprite.scale <= Vector2(4.5, 4.5):
 				$HUD/game_over_sprite.scale=Vector2(10,10)
 				$HUD/game_over_sprite.visible= false

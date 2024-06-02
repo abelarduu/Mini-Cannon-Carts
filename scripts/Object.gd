@@ -1,5 +1,6 @@
 tool
 extends StaticBody2D
+var get_score: bool = true
 var objs_life= [50, 90, 120]
 export (int , "Box", "Barrel", "Contanier") var type_objects
 export (int, "Blue", "Red") var index setget set_index

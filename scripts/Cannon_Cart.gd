@@ -5,6 +5,7 @@ var attack: bool
 var scores= 0
 var life= 100
 var speed= 200
+var get_score= true
 var BOMBS_GROUP= "Bomb-" + str(self)
 
 #Assets
@@ -83,4 +84,11 @@ func damage_animate():
 func reset():
 	life= 100
 	scores= 0
-	position= Vector2(169, 280) if index == 0 else Vector2(856, 282)
+	if index == 0:
+		position= Vector2(169, 280) 
+		rotation= 0
+	else:
+		position= Vector2(856, 282)
+		rotation= 180
+	#position= Vector2(169, 280) if index == 0 else Vector2(856, 282)
+	
