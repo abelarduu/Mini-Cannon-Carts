@@ -85,8 +85,6 @@ func reset():
 	life= 100
 	scores= 0
 	position= Vector2(169, 280) if index == 0 else Vector2(856, 282)
+	look_at(get_parent().player2_position if index == 0 else get_parent().player1_position)
 	$AnimatedSprite.animation= "idle"
 	$lifeBar.value= life
-	
-	
-	

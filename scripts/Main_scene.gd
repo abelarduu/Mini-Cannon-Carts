@@ -20,7 +20,7 @@ func _physics_process(_delta):
 			if $HUD/game_over_sprite.scale >= Vector2(4.5, 4.5):
 				$HUD/game_over_sprite.scale-= Vector2(0.25,0.25)
 	else: move_obj($HUD/game_icon_sprite, Vector2(491.020996, 295), 5)
-		
+
 func _input(event):
 	if event is InputEventKey:
 		if event.pressed:
@@ -44,8 +44,15 @@ func move_obj(obj, new_pos, steps):
 		obj.position+= Vector2(0, steps)
 
 func reset_game():
-	for node in get_children():
-		print(get_children())
+	#Pegando todos Objetos
+	var boxes= $objects/boxes.get_children()
+	var barrels= $objects/barrels.get_children()
+	var containers= $objects/containers.get_children()
+	var objs= boxes + barrels + containers
+	var nodes= get_children() + objs
+	
+	#Resetando tudo
+	for node in nodes:
 		if node.has_method("reset"):
 			node.reset()
 	play= false
