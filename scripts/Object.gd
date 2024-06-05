@@ -34,3 +34,4 @@ func damage_animate():
 func reset():
 	life= objs_life[type_objects]
 	$AnimatedSprite.animation= "idle"
+	self_point= life/2

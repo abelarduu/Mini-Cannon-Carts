@@ -8,26 +8,30 @@ var play= false
 func _physics_process(_delta):
 	if check_player(player1): player1_position= player1.position
 	if check_player(player2): player2_position= player2.position
-	#HUD
+	$HUD/Player1_Scores.text= str(player1.scores)
+	$HUD/Player2_Scores.text= str(player2.scores)
+
 	if play: 
-		$HUD/Player1_Scores.text= str(player1.scores)
-		$HUD/Player2_Scores.text= str(player2.scores)
+		#Movendo a placa "Game icon" para fora da tela
 		move_obj($HUD/game_icon_sprite, Vector2(491.020996, -190), -5)
-		
-		#Game Over 
+		#Se o um dos players morrerem: Anime a placa "Game Over"
 		if not check_player(player1) or not check_player(player2):
 			$HUD/game_over_sprite.visible= true
 			if $HUD/game_over_sprite.scale >= Vector2(4.5, 4.5):
 				$HUD/game_over_sprite.scale-= Vector2(0.25,0.25)
-	else: move_obj($HUD/game_icon_sprite, Vector2(491.020996, 295), 5)
+	else:
+		#Movendo a placa "Game icon" para dentro da tela 
+		move_obj($HUD/game_icon_sprite, Vector2(491.020996, 295), 5)
 
 func _input(event):
 	if event is InputEventKey:
 		if event.pressed:
 			if not play:
+				#Se a placa "Game icon" estiver no local certo dentro da tela: 
 				if $HUD/game_icon_sprite.position >= Vector2(491.020996, 295):
 					play= true
 			
+			#Se a Animação da placa "Game Over" acabar:
 			if $HUD/game_over_sprite.scale <= Vector2(4.5, 4.5):
 				$HUD/game_over_sprite.scale=Vector2(10,10)
 				$HUD/game_over_sprite.visible= false
@@ -38,7 +42,7 @@ func check_player(player) -> bool:
 		if player.life > 0:
 			return true
 	return false
-	
+
 func move_obj(obj, new_pos, steps):
 	if not obj.position == new_pos:
 		obj.position+= Vector2(0, steps)

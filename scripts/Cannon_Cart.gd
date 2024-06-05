@@ -1,5 +1,6 @@
 tool
 extends KinematicBody2D
+onready var initial_angle= rotation
 var mov: Vector2
 var attack: bool
 var scores= 0
@@ -84,7 +85,7 @@ func damage_animate():
 func reset():
 	life= 100
 	scores= 0
+	rotation= initial_angle
 	position= Vector2(169, 280) if index == 0 else Vector2(856, 282)
-	look_at(get_parent().player2_position if index == 0 else get_parent().player1_position)
 	$AnimatedSprite.animation= "idle"
 	$lifeBar.value= life
