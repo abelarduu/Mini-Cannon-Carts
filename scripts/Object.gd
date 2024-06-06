@@ -1,6 +1,7 @@
 tool
 extends StaticBody2D
 var objs_life= [50, 90, 120]
+onready var initial_position= position
 export (int , "Box", "Barrel", "Contanier") var type_objects
 export (int, "Blue", "Red") var index setget set_index
 onready var life= objs_life[type_objects]
@@ -34,4 +35,5 @@ func damage_animate():
 func reset():
 	life= objs_life[type_objects]
 	$AnimatedSprite.animation= "idle"
+	position= initial_position
 	self_point= life/2

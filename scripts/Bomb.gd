@@ -17,6 +17,7 @@ func _on_Bomb_body_entered(body):
 	if not "walls" in body.name:
 		if not body == parent:
 			body.life-= damage
+			shake_obj(body)
 			
 			#Destruindo objs
 			if body.life <= 0:
@@ -30,3 +31,10 @@ func _on_Bomb_body_entered(body):
 	$AnimatedSprite.animation= "destroyed"
 	yield($AnimatedSprite, "animation_finished")
 	queue_free()
+
+func shake_obj(obj):
+	var shake_intensity = 1
+	# Gerando valores de deslocamento aleatório
+	var shake_offset = Vector2(randf() * shake_intensity * 3 - shake_intensity, randf() * shake_intensity * 3 - shake_intensity)
+	var new_pos = obj.position + shake_offset
+	obj.position = lerp(obj.position, new_pos, 0.5)
