@@ -4,10 +4,12 @@
  
 ### Sobre o projeto
 
-### 🚧⚠️Em desenvolvimento...⚠️🚧
+🚧⚠️ **Em desenvolvimento...** ⚠️🚧
 
+**Mini-Cannon-Carts** é um jogo multiplayer local onde dois jogadores controlam carroças equipadas com canhões em uma arena compacta. Com pixel art deslumbrante e uma perspectiva top-down, o jogo oferece uma experiência emocionante com ação intensa, um ambiente interativo onde é possível destruir caixas, barris e contêineres, efeitos realistas onde tiros fazem os objetos tremer e se mover, além de dano próprio, onde tiros podem causar dano a você mesmo, mas reduzido.
 
-Prepare-se para uma ação explosiva em **Mini Cannon Cart**! Este jogo de multiplayer local coloca dois jogadores no controle de carroças equipadas com canhões em uma pequena arena. Com visuais incríveis em pixel art e uma perspectiva topdown envolvente, a diversão é garantida! Os controles responsivos garantem uma experiência de jogo suave enquanto você e seus amigos se enfrentam em duelos intensos. Manobre sua carroça habilmente, planeje ataques precisos e conquiste a vitória em **Mini Cannon Cart**! Está pronto para a batalha?
+Manobre, atire e conquiste a vitória em **Mini-Cannon-Carts**! Está pronto para o desafio? 
 
-<img src="img/Gameplay.gif" type="image/gif" alt="Gameplay gif">
+![Gameplay](img/Gameplay.gif)
+
 </div>
