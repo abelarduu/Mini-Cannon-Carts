@@ -15,15 +15,18 @@ func _physics_process(delta):
 	
 func _on_Bomb_body_entered(body):
 	if not "walls" in body.name:
-		if not body == parent:
-			body.life-= damage
-			shake_obj(body)
-			
-			#Destruindo objs
-			if body.life <= 0:
-				body.damage_animate()
-				parent.scores += body.self_point
-				body.self_point= 0
+		#if colidir com o Player Pai da bomba:
+		#Causa um Self-Damage com dano diminuido
+		if body == parent: body.life-= damage/2
+		#Senão: causar dano normal
+		else: body.life-= damage
+		shake_obj(body)
+		
+		#Destruindo objs
+		if body.life <= 0:
+			body.damage_animate()
+			parent.scores += body.self_point
+			body.self_point= 0
 	
 	z_index= 3
 	mov*= Vector2.ZERO
