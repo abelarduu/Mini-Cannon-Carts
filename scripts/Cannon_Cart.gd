@@ -5,7 +5,8 @@ var mov: Vector2
 var attack: bool
 var scores= 0
 var life= 100
-var speed= 200
+var speed= 0
+const MAX_SPEED= 200
 var self_point= life
 var BOMBS_GROUP= "Bomb-" + str(self)
 
@@ -34,10 +35,10 @@ func _physics_process(_delta):
 	if not Engine.editor_hint:
 		if life > 0 and get_parent().play:
 			mov= Vector2.ZERO
-			if Input.is_action_pressed(mov_inputs[index][0]): mov.x=-1
-			if Input.is_action_pressed(mov_inputs[index][1]): mov.x= 1
-			if Input.is_action_pressed(mov_inputs[index][2]): mov.y=-1
-			if Input.is_action_pressed(mov_inputs[index][3]): mov.y= 1
+			if Input.is_action_pressed(mov_inputs[index][0]): mov.x-=1
+			if Input.is_action_pressed(mov_inputs[index][1]): mov.x+=1
+			if Input.is_action_pressed(mov_inputs[index][2]): mov.y-=1
+			if Input.is_action_pressed(mov_inputs[index][3]): mov.y+=1
 			mov_animate()
 			
 			if Input.is_action_just_pressed(attack_inputs[index]):
@@ -47,6 +48,7 @@ func _physics_process(_delta):
 
 			$lifeBar.value= life
 			look_at(get_parent().player2_position if index == 0 else get_parent().player1_position)
+			speed= lerp(speed, MAX_SPEED * mov.length(), .01)
 			mov= move_and_slide(mov * speed)
 			add_wheel_track()
 			
