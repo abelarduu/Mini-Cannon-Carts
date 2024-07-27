@@ -1,6 +1,6 @@
 <div align="center">
 
-# Mini-Cannon-Carts
+![logo game](img/logo.png)
  
 ### Sobre o projeto
 
